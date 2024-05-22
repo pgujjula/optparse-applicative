@@ -15,9 +15,6 @@ module Options.Applicative.Help.Pretty
   , prettyString
   ) where
 
-#if !MIN_VERSION_base(4,11,0)
-import           Data.Semigroup ((<>), mempty)
-#endif
 import qualified Data.Text.Lazy as Lazy
 
 import           Prettyprinter hiding (Doc)
