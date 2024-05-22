@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 module Options.Applicative.Builder.Internal (
   -- * Internals
   Mod(..),
@@ -26,7 +27,11 @@ module Options.Applicative.Builder.Internal (
 
 import Control.Applicative
 import Control.Monad (mplus)
+#if MIN_VERSION_base(4,16,0)
+import Data.Semigroup
+#else
 import Data.Semigroup hiding (Option)
+#endif
 import Prelude
 
 import Options.Applicative.Common

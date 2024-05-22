@@ -55,7 +55,11 @@ import Control.Monad.Trans.Except (Except, throwE)
 import Control.Monad.Trans.Class (lift)
 import Control.Monad.Trans.Reader (ReaderT, ask)
 import qualified Control.Monad.Fail as Fail
+#if MIN_VERSION_base(4,16,0)
+import Data.Semigroup
+#else
 import Data.Semigroup hiding (Option)
+#endif
 import Prelude
 
 import System.Exit (ExitCode(..))
